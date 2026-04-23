@@ -19,7 +19,7 @@ if uploaded_file:
     for i in range(len(doc)):
         if i not in st.session_state.hidden_pages:
             page = doc.load_page(i)
-            pix = page.get_pixmap(matrix=fitz.Matrix(0.5, 0.5))
+            pix = page.get_pixmap(matrix=fitz.Matrix(2.0, 2.0))
             img_data = pix.tobytes("png")
             img = Image.open(io.BytesIO(img_data))
             
